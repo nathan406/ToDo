@@ -1,0 +1,130 @@
+body{
+    background-color: rgb(22, 22, 22);
+    height: 5000px;
+}
+.navbar{
+    display: flex;
+}
+.logo-user{
+    display: flex;
+    color: aliceblue;
+}
+.logo-user-container{
+    display: grid;
+    grid-template-columns: 4fr 5fr 1fr;
+}
+/* @media(max-width:950px){
+    .logo-user-container{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+} */
+.name{
+    margin: 0;
+    padding:0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* .search-icon{
+    width: 1px;
+    padding-right: -50px;
+    color: aliceblue;
+} */
+.search-bar{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(46, 45, 45);
+    color: rgb(174, 173, 173);
+    width: 480px;
+    padding: 10px;
+    outline: none;
+}
+.search-bar::placeholder{
+    color: rgb(95, 94, 94);
+}
+.notes{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    align-items: center;
+    width: 100%;
+}
+
+/* tablet */
+@media(min-width:601px) and (max-width:768px){
+    .notes{
+        grid-template-columns: 1fr 1fr;
+    }
+    .search-bar{
+        width: 350px;
+    }
+}
+
+/* phone */
+@media(max-width:601px){
+    .notes{
+        grid-template-columns: 1fr ;
+    }
+    .search-bar{
+        width: 530px;
+    }
+}
+.info{
+    background-color: rgb(46, 45, 45);
+    border-radius: 5px;
+    border: none;
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 100px;
+   
+}
+
+/* tablet */
+@media(max-width:768px){
+    .info{
+        width: 330px;
+        
+    }
+}
+
+/* phone */
+@media(max-width:601px){
+    .info{
+        width: 500px;
+        
+    }
+}
+.title{
+    font-size: 60px;
+    color: white;
+    margin: 0;
+}
+.last-created{
+    color: rgb(146, 143, 143);
+    font-size: small;
+    margin: 0;
+    margin-top: 5px;
+}
+.footer{
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+.add-button{
+    background-color: rgb(46, 45, 45);
+    color: white;
+    padding: 0;
+    padding: 10px;
+    padding: 15px 25px 15px;
+    font-size: 30px;
+    border-radius: 50px;
+    border: none;
+    transition: font-size 2s;
+}
+.add-button:hover{
+    font-size: 40px;
+}
+.add-button:active{
+    background-color: rgb(80, 79, 79);
+}

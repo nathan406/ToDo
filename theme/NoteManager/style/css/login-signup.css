@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(22, 22, 22);
+}
+.enclosure{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    background-color: rgb(46, 45, 45);
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 400px;
+    margin-top: 80px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+
+/* tablet */
+@media(min-width:601px) and (max-width:768px){
+    .box{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* the input fields inside the box */
+.input{
+    background-color: rgb(46, 45, 45);
+    border: solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 8px;
+    /* width: 100%; */
+    min-width:300px; 
+    height: 30px;
+    color: white;
+}
+.text{
+    color: white;
+}
+
+/* phone */
+@media(max-width:601px){
+    .box{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .input{
+        width: 20px;
+    }
+}
+
+.button{
+    background-color: rgb(93, 91, 91);
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+.button:active{
+    background-color:  rgb(134, 134, 134);
+}
+.signup{
+    text-decoration: none;
+    color: rgb(118, 118, 171);
+}

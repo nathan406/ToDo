@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+
+{% block content %}
+<html style="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <title>Document</title>
+</head>
+<body class="center">
+
+    <div class="">
+        <label class="white" for="">activity</label>
+        <h3 class="white">{{view}}</h3>
+        <div class="pad-down">
+            <label class="white" for="">description</label>
+            <p class="white" >{{view.description}}</p>
+        </div>
+        <a href="{% url 'editActivity' view.id %}">
+            <button class="button">Edit</button>
+        </a>
+        <a  href="{% url 'delete' view.id %}">
+            <input class="button" type="button" value="delete" />
+        </a>
+    </div>       
+    
+
+</body>
+</html>
+
+{% endblock content %}

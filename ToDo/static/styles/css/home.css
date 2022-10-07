@@ -1,0 +1,228 @@
+body{
+    background-color: rgb(22, 22, 22);
+}
+.mobile-navigation {
+    display: none;
+}
+.menu-button {
+   
+}
+@media(max-width:601px){
+    .mobile-navigation{
+        display: contents;
+    }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+.empty-search {
+    color: white;
+    display: flex;
+    /* grid-template-columns: 2fr 1fr 1fr; */
+    justify-content: center;
+}
+.empty-search p{
+    color: gray;
+    margin-left: 100px;
+}
+.image{
+    width: 300px;
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+}
+
+@-webkit-keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+.navbar{
+    display: flex;
+}
+.logo-user{
+    display: flex;
+    color: aliceblue;
+}
+.logo-user-container{
+    display: block;  
+}
+/* @media(max-width:950px){
+    .logo-user-container{
+        display: grid;
+        grid-templateo-rows: 1fr 1fr;
+    }
+} */
+.logout-button a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.logout-button{
+    background-color: rgb(46, 45, 45);
+    border-color: blue;
+    border-radius: 5px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+.name{
+    margin: 0;
+    padding:0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.search-button{
+    width: fit-content;
+    background-color: rgb(22, 22, 22);
+    border: none;
+    margin: 0;
+}
+.search-icon{
+    margin-bottom: -10px;
+    width: 30px;
+    background-color: rgb(46, 45, 45);
+    margin-left: -80px;
+}
+.nawrapper {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: row; */
+}
+.nav-container{
+    display:flex;
+    justify-content: center;
+    gap: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 40px;
+}
+
+.search-bar{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(46, 45, 45);
+    color: rgb(174, 173, 173);
+    width: 480px;
+    padding: 10px;
+    box-shadow: 10px 1px 10px 10px rgb(17, 18, 17);
+    /* display: flex;
+    justify-content: center; */
+    transition: box-shadow 2s;
+    outline: none;
+}
+
+.search-bar::placeholder{
+    color: rgb(95, 94, 94);
+}
+.search-bar:focus{
+    box-shadow:10px 1px 10px 10px rgb(18, 108, 244) ;
+}
+.notes-container{
+    display: flex;
+    justify-content: center ;
+}
+.notes{
+    display: grid;
+    grid-template-columns: 30fr 30fr 30fr;
+    align-items: center;
+    width: max-content;
+    gap: 3rem;
+    /* margin-left: 100px; */
+}
+
+/* tablet */
+@media(min-width:601px) and (max-width:768px){
+    .notes{
+        grid-template-columns: 1fr 1fr;
+    }
+    .search-bar{
+        width: 350px;
+    }
+}
+
+/* phone */
+@media(max-width:601px){
+    .notes{
+        grid-template-columns: 1fr ;
+    }
+    .search-bar{
+        width: 530px;
+    }
+    .logout-button{
+        display: none;
+    }
+}
+.info{
+    background-color: rgb(46, 45, 45);
+    border-radius: 5px;
+    border: none;
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 100px;
+    text-decoration: none;
+   
+}
+
+/* tablet */
+@media(max-width:768px){
+    .info{
+        width: 330px;
+        
+    }
+}
+
+/* phone */
+@media(max-width:601px){
+    .info{
+        width: 500px;
+        
+    }
+}
+.title{
+    font-size: 60px;
+    color: rgb(40, 8, 251);
+    margin: 0;
+    text-decoration: none !important;
+    
+}
+@media(max-width:2000){
+    .title{
+        font-size: 40px;
+    }
+    
+}
+.last-created{
+    color: rgb(146, 143, 143);
+    font-size: small;
+    margin: 0;
+    margin-top: 5px;
+}
+.footer{
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+.add-button{
+    color: rgb(10, 10, 248);
+    background-color: rgb(46, 45, 45);
+    padding: 0;
+    padding: 10px;
+    padding: 15px 25px 15px;
+    font-size: 30px;
+    border-radius: 50px;
+    border: none;
+    transition: font-size 2s;
+}
+.add-button:hover{
+    font-size: 40px;
+}
+.add-button:active{
+    background-color: rgb(80, 79, 79);
+}

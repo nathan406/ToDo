@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/css/login-signup.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <form action=""  method="post" id="form">
+        {% csrf_token %}
+        {% if page == 'register' %}
+        <div class="enclosure">
+            <div class="box">
+                <div>
+                    <p class="text">Register</p> 
+                    
+                </div>
+
+                {{form.as_p}}
+                <!-- <div>
+                    <p class="text">Name</p>
+                    <input class="input" type="text" name="username" placeholder="type username">
+                </div>
+                <div>
+                    <p class="text">Password</p>
+                    <input class="input" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" name="password">
+
+                </div>
+                <div>
+                    <p class="text">Password</p>
+                    <input class="input" type="password" placeholder="confirm password" name="password2"> 
+                </div>  -->
+                <a href="{% url 'home' %}">
+                    <button class="button" type="submit">
+                        Sign Up
+                    </button>
+                </a>
+
+                <p> 
+                    <a href="{% url 'login' %}" class="signup">Sign In</a>
+                </p>
+            </div>
+            
+        </div>
+        {% else %}
+
+        <div class="enclosure">
+            <div class="box">
+                <div>
+                    <p class="text">Login</p> 
+                    <div>
+                        {% for message in messages  %}
+                            <p style="color: white;">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+                <div>
+                    <!-- <p style="color: white;">Username:</p>
+                    {{form.username}}
+                    <p style="color: white;">Password:</p>
+                    {{form.password2}}  -->
+                
+                </div>
+                <div>
+                    <p class="text">Name</p>
+                    <input class="input" type="text" placeholder="type username" name="username">
+                </div>
+                <div>
+                    <p class="text">Password</p>
+                    <input class="input" type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+                </div> 
+  
+                <a href="{% url 'home' %}">
+                    <button class="button" type="submit">
+                        Sign In
+                    </button>
+                </a>
+
+                <p> 
+                    <a href="{% url 'register' %}" class="signup">Sign Up</a>
+                </p>
+            </div>
+            {% endif %}
+    </form>
+
+</body>
+</html>

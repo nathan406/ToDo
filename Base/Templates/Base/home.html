@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/view.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/menu.css ' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/no-results.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/dropdown.css' %}">
+    <script src="style/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <title>Document</title>
+</head>  
+<nav >
+    <div class="mobile-navigation">
+        <!-- <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              
+              <a href="#about">
+                <img class="home-icon-mobile" src="{% static 'styles/icons/home.svg' %}" alt="">
+              </a>
+              <a href="#base">
+                <img class="edit-delete-mobile" src="{% static 'styles/icons/edit.png' %}" alt="">
+              </a>
+              <a href="#blog">
+                <img class="edit-delete-mobile" src="{% static 'styles/icons/grey-trash-can.png' %}" alt="">
+              </a>
+            </div>
+        </div> -->
+        <button class="menu-button" onclick="myFunction()">
+            <div class="container">
+                <div class="stick stick-1"></div>
+                <div class="stick stick-2"></div>
+                <div class="stick stick-3"></div>
+            </div>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
+
+            </script><script src="./script.js">
+            </script>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="">
+                    <img class="home-icon-mobile" src="{% static 'icons/home.svg' %}" alt="">
+                </a>
+
+                <a href="">
+                    <img class="edit-delete-mobile" src="{% static 'icons/edit.png' %}" alt="">
+                </a>
+
+                <a id="" >
+                    <!-- <button id="show">
+                    </button> -->
+                    <img class="edit-delete-mobile" src="{% static 'icons/grey-trash-can.png' %}" alt="">
+                </a>
+            </div>
+        </button>
+    </div>
+
+    <div>
+        <form action="" method="get">
+            <!-- {% csrf_token %} -->
+            <div class="navwrapper">
+                <div class="nav-container">
+                    <div >
+                        <p style="color: white;">
+                            <button class="logout-button">
+                                <a href="{% url 'addActivity' %}">
+                                    Add Note
+                                </a>
+                            </button>
+                           
+                        </p>
+                          <!-- <div class="footer">
+        <a href="{% url 'addActivity' %}">
+            <button class="add-button">+</button>
+        </a>
+    </div> -->
+                    </div>
+                    <div>
+                        <input id="form" name="q" class="search-bar" type="text" placeholder="Search notes" >
+                        <!-- <button class="search-button" type="submit">  
+                            <img class="search-icon" src="{% static 'icons/search.svg' %}" alt="">
+                        </button> -->
+                    </div>
+                    <div>
+                        <a href="{% url 'logout' %}">
+                            <button class="logout-button">
+                                logout
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</nav>
+<body>
+    <!-- <div style="display: flex;
+    justify-content: space-evenly;"> -->
+    <div class="notes-container">
+            <div class="notes">  
+                {% for topic in topic %}
+                {% if request.user == topic.host %}
+               
+                <div class="info">
+                    <a class="title" href="{% url 'viewActivity' topic.id %}">
+                        <div class="title">{{topic|stringformat:".10s"}}</div>
+                    </a> 
+                    <p class="last-created" >added {{topic.created|timesince}} ago</p>
+                </div>
+                {% endif %}
+                {% endfor %} 
+            </div> 
+
+            {% for topic  in topic%}
+            {% empty %}
+            <div style="display:flex ;">
+                <div class="empty-search">
+                    <div></div>
+                    <div>
+                        <img src="{% static 'icons/search.png' %}" class="image" alt="">
+                        <p> no results found <strong>
+                            <a href="{% url 'home' %}">go back</a>
+                        </strong> </p> 
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/css/view.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/dropdown.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/delete.css ' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/menu.css ' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="style/script.js"></script>
+    <title>Document</title>
+</head>
+<nav>
+    
+</nav>
+<body> 
+    <!-- mobile naviation  -->
+    <div class="mobile-navigation">
+        <!-- <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              
+              <a href="#about">
+                <img class="home-icon-mobile" src="{% static 'styles/icons/home.svg' %}" alt="">
+              </a>
+              <a href="#base">
+                <img class="edit-delete-mobile" src="{% static 'styles/icons/edit.png' %}" alt="">
+              </a>
+              <a href="#blog">
+                <img class="edit-delete-mobile" src="{% static 'styles/icons/grey-trash-can.png' %}" alt="">
+              </a>
+            </div>
+        </div> -->
+        <button class="menu-button" onclick="myFunction()">
+            <div class="container">
+                <div class="stick stick-1"></div>
+                <div class="stick stick-2"></div>
+                <div class="stick stick-3"></div>
+            </div>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
+
+            </script><script src="./script.js">
+            </script>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="{% url 'home' %}">
+                    <img class="home-icon-mobile" src="{% static 'icons/home.svg' %}" alt="">
+                </a>
+
+                <a href="{% url 'editActivity' view.id %}">
+                    <img class="edit-delete-mobile" src="{% static 'icons/edit.png' %}" alt="">
+                </a>
+
+                <a id="show" >
+                    <!-- <button id="show">
+                    </button> -->
+                    <img class="edit-delete-mobile" src="{% static 'icons/grey-trash-can.png' %}" alt="">
+                </a>
+            </div>
+        </button>
+    </div>
+
+    <div style="display: flex;">
+        <div class="nav">
+            <div class="home-icon-container">
+                <a href="{% url 'home' %}">
+                    <button>
+                        <img src="{% static 'icons/home.svg' %} " class="home-icon" alt="">
+                        <div class="hover-descriptive">home</div>
+                    </button>
+                </a>
+            </div>
+
+            <div class="edit-icon-container">
+                <a href="{% url 'editActivity' view.id %}">
+                    <button >
+                        <img src="{% static 'icons/edit.png' %}" class="edit-icon" alt="">
+                        <div class="hover-descriptive">edit</div>
+                    </button>
+                </a>
+            </div>
+
+            <div class="delete-icon-container">
+                    <button id="show">
+                        <img src="{% static 'icons/grey-trash-can.png' %}"  class="delete-icon" alt="">
+                        <div class="hover-descriptive">delete</div>
+                    </button>
+            </div>
+            
+        </div>
+        <div class="view-container">
+
+            <div class="note">
+                <p class="note-title">{{view}}</p>
+                <p class="note-body">{{view.description}}</p>
+            </div>
+        
+            <div></div>
+            
+            <div class="recent-notes">
+                <div class="recent-note-container">
+                    <p class="recent-notes-title">Recent Notes</p>
+                    {% for topic in topics %}
+                    {% if request.user == topic.host %}
+                        <a href="{% url 'viewActivity' topic.id %}">
+                            <div class="recent-note">
+                                <p>{{topic}}</p>
+                            </div>
+                        </a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div class="center hideform">
+            <button class="x" id="close" style="float: right;">X</button>
+            <form action="" method="post">
+                {% csrf_token %}
+                <p class="text">Are you sure you want to delete {{view}}</p>
+                <button class="yes-button" type="submit">
+                    yes
+                </button>
+            </form>
+        </div>
+        <!-- <button id="show">Show form</button>  -->
+        <script src="{% static 'styles/css/script.js' %}"></script> 
+</body>
+</html>
+

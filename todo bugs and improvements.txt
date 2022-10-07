@@ -1,0 +1,9 @@
+signup blank valid 
+the dropdown in mobile devices 
+	must be on every page invluding different actions 
+fix all responsive issues on every page
+forgot password functionality
+login with with google,facebook and other similar social networks 
+loading animation while app loads
+zoom in zoom out effect and links redesign on index page
+settings which will change username ,password and theme of app

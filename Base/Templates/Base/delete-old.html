@@ -1,0 +1,23 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html style="height:100%; " lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body class="center">
+        <form method="post">
+            {%csrf_token%}
+            
+                <p class="white">Are you sure you want to delete {{get.activity}}</p>
+                <p><button class="button" type="submit">Yes</button> <a href="{% url  'home' %}"><input class="button" type="button" value="cancel"></p></a>                    
+        </form>
+    </body>
+</html>
+
+{%  endblock content %}

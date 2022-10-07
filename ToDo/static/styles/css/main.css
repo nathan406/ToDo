@@ -1,0 +1,129 @@
+html{
+    
+}
+
+body{
+    background-color: rgb(201, 156, 248);
+    background-image: url('/static/images/blue.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    color: rgb(12, 12, 12);
+    background-position: center center;
+    background-attachment: fixed;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+
+
+}
+.white{
+    color: rgba(204, 198, 249, 0.968);
+    text-decoration: none;
+
+}
+.grey{
+    color: rgba(253, 254, 255, 0.438);
+}
+
+/* CSS */
+.button{
+  background: #4e4efb58;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 15px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+.padding{
+    word-spacing: 10px;
+}
+.custom-pad{
+    padding-top: 10px;
+}
+.pad-down{
+    padding-top: 30px;
+    padding-bottom: 25px;
+    /* padding-bottom: 15px; */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    font-size: small;
+    width: 100%;
+    /* margin-left:100px;
+    margin-right: 350px; */
+    color: rgba(253, 254, 255, 0.438);
+}
+
+.footer-container{
+    background: #0303ff3e;
+    margin-left: 200px;
+    margin-right: 200px;
+    /* width: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-left: 100px;
+    padding-right: 100px; */
+    height: 50px;
+}
+
+.nav{
+   position: fixed;
+   top: 0;
+   height: 4px;
+   width: 100%; 
+
+}
+.nav-container{
+   height: 30px;
+   background: #0303ff3e;
+   margin-left: 200px;
+   margin-right: 200px;
+}
+
+/* add activity styling */
+.center{
+    padding-top: 180px;
+    background-size: cover;
+    width: 100%;
+
+}
+.center-font{
+    text-align: center;
+    border-radius: 10px;
+    background: #0303ff3e;
+    color: rgba(215, 223, 232, 0.971);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(249, 240, 240, 0.465);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(245, 238, 238, 0.459);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgba(244, 237, 237, 0.461);
+  }
+
+.search{
+    position: fixed;
+    top: 60px;
+    width: 100%;
+}
+	

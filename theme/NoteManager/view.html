@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/css/view.css">
+    <link rel="stylesheet" href="style/css/dropdown.css">
+    <script src="style/script.js"></script>
+    <title>Document</title>
+</head>
+<nav>
+    
+</nav>
+<body>
+    <!-- mobile naviation  -->
+    <div class="mobile-navigation">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+              <a href="#about">
+                <img class="home-icon-mobile" src="style/icons/home.svg" alt="">
+                
+              </a>
+              <a href="#base">
+                <img class="edit-delete-mobile" src="style/icons/edit.png" alt="">
+                
+              </a>
+              <a href="#blog">
+                <img class="edit-delete-mobile" src="style/icons/grey-trash-can.png" alt="">
+                
+              </a>
+            </div>
+          </div>
+    </div>
+    <div style="display: flex;">
+        <div class="nav">
+            <div class="home-icon-container">
+                <button>
+                    <img src="style/icons/home.svg " class="home-icon" alt="">
+                    <div class="hover-descriptive">home</div>
+                </button>
+
+            </div>
+
+            <div class="edit-icon-container">
+                <button >
+                    <img src="style/icons/edit.png" class="edit-icon" alt="">
+                    <div class="hover-descriptive">edit</div>
+                </button>
+
+            </div>
+
+            <div class="delete-icon-container">
+                <button>
+                    <img src="style/icons/grey-trash-can.png" class="delete-icon" alt="">
+                    <div class="hover-descriptive">delete</div>
+                </button>
+
+            </div>
+            
+        </div>
+        <div class="view-container">
+
+            <div class="note">
+                <p class="note-title">Title</p>
+                <p class="note-body">Body</p>
+            </div>
+        
+            <div></div>
+            <div class="recent-notes">
+                
+                <div class="recent-note-container">
+                    <p class="recent-notes-title">Recent Notes</p>
+                    <div class="recent-note">
+                        <p>Title</p>
+                    </div>
+                    <div class="recent-note">
+                        <p>Title</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

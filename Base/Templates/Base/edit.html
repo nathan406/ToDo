@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/css/add.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="page-center">
+            <div class="page-row">
+                
+                <div class="add-cancel">
+                    <div class="add-button-container">
+                        <a href="{% url 'home' %}">
+                            <button class="add-button" type="submit">&#x2713;</button> 
+                            <div class="tooltip">add note</div>
+                        </a>
+                    </div>
+                    <div class="cancel-button-container">
+                        <a href="{% url 'home' %}">
+                            <button class="cancel-button"> &#x2715;</button> 
+                            <div class="tooltip"> cancel </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div >
+                        <p class="title">{{form.activity}}</p>
+                        <!-- <input type="text" class="title" name="description" placeholder="Title" id="activity"> -->
+                    </div>
+                    <div class="body">
+                        <p class="body">{{form.description}}</p>
+                          <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+                          <!-- <script>
+                            // Get the button
+                            let mybutton = document.getElementById("myBtn");
+                            
+                            // When the user scrolls down 20px from the top of the document, show the button
+                            window.onscroll = function() {scrollFunction()};
+                            
+                            function scrollFunction() {
+                              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                                mybutton.style.display = "block";
+                                mybutton.style.backgroundColor = "black";
+                              } else {
+                                mybutton.style.display = "none";
+                              }
+                            }
+                            
+                            // When the user clicks on the button, scroll to the top of the document
+                            function topFunction() {
+                              document.body.scrollTop = 0;
+                              document.documentElement.scrollTop = 0;
+                            }
+                            </script> -->
+                        <!-- <input type="text" placeholder="Body" class="body" name="description" id="description"> -->
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </form>
+</body>
+</html>

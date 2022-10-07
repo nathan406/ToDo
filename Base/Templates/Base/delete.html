@@ -1,0 +1,54 @@
+
+
+
+
+<!-- begin snippet: js hide: false console: true babel: null -->
+
+<!-- language: lang-html -->
+
+<html>
+  <head>
+  <style>
+  .center {
+      margin: auto;
+      width: 60%;
+      padding: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .hideform {
+      display: none;
+  }
+  </style>
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div class="center hideform">
+        <button id="close" style="float: right;">X</button>
+        <form action="/action_page.php">
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey">
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" value="Mouse">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <button id="show">Show form</button>
+    <script>
+    $('#show').on('click', function () {
+        $('.center').show();
+        $(this).hide();
+    })
+  
+    $('#close').on('click', function () {
+        $('.center').hide();
+        $('#show').show();
+    })
+    </script>
+    </body>
+    </html>
+
+<!-- end snippet -->
+

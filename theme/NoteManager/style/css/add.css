@@ -1,0 +1,110 @@
+body {
+    background-color: rgb(22, 22, 22);
+}
+.page-center{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    flex: 1fr;
+    /* flex-direction: column; */
+}
+.page-row{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px ;
+    margin-right: 100px;
+    /* height: 60px; */
+    width: 100%;
+}
+/* tablet */
+@media(min-width:601px) and (max-width:768px){
+    .page-row{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+/* phone */
+@media(max-width:601px){
+    .page-row{
+        margin: 0;
+    }
+}
+.form-container{
+    background-color: rgb(46, 45, 45);
+    /* width: 800px; */
+    height: max-content;
+    border-radius:8px ;
+    padding: 30px;
+    min-height:250px ;
+}
+.title,
+.body{
+    color: white;
+    background-color:rgb(46, 45, 45) ;
+    border: none;
+    border-color: rgb(46, 45, 45);
+    font-size: 20px;
+    outline: none;
+    width: 100%;
+}
+.title{
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
+
+/* add-cancel buttons */
+.add-cancel{
+    display: flex;
+    align-content: flex-start;
+    margin-top: 5px;
+}
+.add-button,
+.cancel-button{
+    color: white;
+    background-color: rgb(22, 22, 22);
+    outline: none;
+    border: none;
+    width: 50px;
+    font-size: 20px;
+    position: relative;
+}
+/* .add-button{
+    margin: 0;
+} */
+
+.add-button-container .tooltip,
+.cancel-button-container .tooltip{
+    position: absolute;
+    background-color: black;
+    color: white;
+    position: absolute;
+    padding: 5px;
+    opacity: 0;
+    pointer-events: none;
+    
+}
+.add-button-container:hover .tooltip,
+.cancel-button-container:hover .tooltip{
+    opacity: 1;
+}
+.add-button:active{
+    color: green;
+}
+.cancel-button:active{
+    color: red;
+}
+
+.activity{
+    background-color: black;
+    border: none;
+}
+
+.title, body{
+    background-color: aqua;
+}
+
+.description{
+    background-color: black;
+}

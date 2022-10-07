@@ -1,0 +1,63 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+
+<html style="height: 100% ;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <title>ToDo App</title> 
+
+</head>
+<body  >
+
+    <div  class="pad-down">
+    
+        <!-- <img src="{% static 'images/test.jpg' %}" alt=""> -->
+        {% if request.user.is_authenticated %}
+            <div class="">
+                <p class="grey">Logged in as {{request.user.username}}</p>
+                <a href="{% url 'addActivity' %}">
+                    <button class="button" >Add Activity</button>
+                </a>
+                <a href="{% url 'search' %}"> 
+                    <button class="button"> View/Search </button>
+                </a>
+            </div>
+
+
+            <div >
+                {% for topic in topics %}
+
+                {% if request.user == topic.host %}
+                
+                <div >
+                
+                    <div class="pad-down" >
+                        <h2 >
+                        
+                            <a class="white" href="{% url 'viewActivity' topic.id %}">{{topic}}</a>
+    
+                        </h2>
+                        <p class="grey" >added {{topic.created|timesince}} ago</p>
+                    </div>
+
+                </div>
+                    
+                {% endif %}
+            {% endfor %}
+            </div>
+            
+        {% endif %}
+        
+    </div>
+    
+</body>
+</html>
+
+{% endblock content %}

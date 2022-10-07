@@ -1,0 +1,107 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html style="height:100% ;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="center">
+        <form method='post' action="">
+            {% csrf_token %}
+            {% if page == 'register' %}
+                <div class="">
+
+                    <div>
+                        <p class="white">Register</p>
+                        <!-- <p><label for="">username:</label></p> -->
+                        <ul >
+                            {% for message in messages %}
+                            <li class="white">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        
+                        <!-- <p>{{form.username}}</p> -->
+                        <p class="">
+                          <input placeholder="username" class="center-font" type="text" name="username">  
+                        </p>
+                    </div>
+                    <div>
+                        <!-- <p><label for="">password:</label></p> -->
+                        <!-- <p>{{form.password1}}</p> -->
+                       <p>
+                        <input placeholder="password" type="password" class="center-font" name="password1">
+                       </p> 
+                    </div>
+                    <div>
+                        <!-- <p><label for="">retype password</label></p> -->
+                        <!-- <p>{{form.password2}}</p> -->
+                        <p>
+                            <input placeholder="confirm password" type="password" class="center-font" name="password2" id="">
+                        </p> 
+                    </div>
+    
+                    <div>
+                        <button class="button" type="submit">Signup</button>
+                    </div>
+    
+                    <div class="pad-down">
+                        <p style="font-size:13px ;" class="white">Already signed up?</p>
+                       <p class="">
+                           <a style="text-decoration:none ;" class="button" href="{% url 'login' %}">
+                               Login
+                            </a> 
+                        </p> 
+                    </div>
+
+                </div>
+
+
+            {% else %}
+        
+        
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+        
+                    <div  >
+                        <p>
+                            <input class="center-font" type="text" name="username" placeholder="enter your username"></p>
+                        <p>
+                            <input class="center-font" type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" >
+                        </p>
+                    </div>
+                    
+                    <a href="{% url 'home' %}">
+                        <button class="button" type="submit">Login</button>
+                    </a>
+                    
+                    <div class="pad-down">
+                        <p style="font-size:13px ;" class="white">Havent yet signed up?</p>
+                        <a  href="{% url 'register' %}">
+                            <p class="white">
+                                <button class="button">Register</button> 
+                            </p>
+                        </a>
+                    </div>
+
+                    
+                </form>
+            {% endif %}
+                
+        </form>
+    </div>
+
+</body>
+</html>
+
+{% endblock content %}
+

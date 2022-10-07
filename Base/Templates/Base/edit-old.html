@@ -1,0 +1,25 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html style="height:100% ;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="center">
+    
+    <p>
+        <form method="POST">
+            <p>{{form.activity}}</p>
+            <p>{{form.description}}</p>
+            {% csrf_token %}
+            <button class="button">Submit</button>
+        </form>
+    </p>  
+</body>
+</html>
+
+{% endblock content %}
