@@ -1,2 +1,0 @@
-i created a metasploit payload and trasnfereed it to my phine by cutting it from kali linux and pasting on my windows home screen then transferring to my phone via usb file transfer typed the exploit and metasploit was waitinng for a coneection i then installed the virus on my device and it displayed the "this app was build for an older version of android" by i installed it anyway and back at metasploit the connection was still not connected 
-i faced a similar issue with androrat any help will be appreciate

@@ -6,86 +6,151 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/css/login-signup.css' %}">
-    <title>Document</title>
+    <title>Login Register</title>
 </head>
 <body>
-    <form action=""  method="post" id="form">
-        {% csrf_token %}
-        {% if page == 'register' %}
-        <div class="enclosure">
-            <div class="box">
-                <div>
-                    <p class="text">Register</p> 
-                    
-                </div>
 
-                {{form.as_p}}
-                <!-- <div>
-                    <p class="text">Name</p>
-                    <input class="input" type="text" name="username" placeholder="type username">
-                </div>
-                <div>
-                    <p class="text">Password</p>
-                    <input class="input" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" name="password">
-
-                </div>
-                <div>
-                    <p class="text">Password</p>
-                    <input class="input" type="password" placeholder="confirm password" name="password2"> 
-                </div>  -->
-                <a href="{% url 'home' %}">
-                    <button class="button" type="submit">
-                        Sign Up
-                    </button>
-                </a>
-
-                <p> 
-                    <a href="{% url 'login' %}" class="signup">Sign In</a>
-                </p>
-            </div>
-            
+    <div class="wrap">
+        <div class="cube">
+            <img src="{% static 'icons/note-icon.jpg' %}" alt="">
         </div>
-        {% else %}
+    </div>
 
-        <div class="enclosure">
-            <div class="box">
-                <div>
-                    <p class="text">Login</p> 
+    <div class="layer2">
+        <form action=""  method="post" id="form">
+            {% csrf_token %}
+            {% if page == 'register' %}
+            <div class="enclosure">
+                <div class="box">
                     <div>
-                        {% for message in messages  %}
-                            <p style="color: white;">{{ message }}</p>
-                        {% endfor %}
+                        <p class="text">REGISTER</p> 
+                        
+                    </div>
+    
+                    <!-- {{form.as_p}} -->
+                    <div>
+                        <p class="text">Name</p>
+                        <input class="input" type="text" name="username" placeholder="type username">
+                    </div>
+                    <div>
+                        <p class="text">Password</p>
+                        <input class="input" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" name="password">
+    
+                    </div>
+                    <div>
+                        <p class="text">Password</p>
+                        <input class="input" type="password" placeholder="confirm password" name="password2"> 
+                    </div> 
+    
+                    {% for message in messages %}
+                    <ul style="color: rgb(236, 80, 80);"> {{message}} </ul>
+                    <!-- <ul> passwords must match </ul>
+                    <ul>password must contain atleast one digit,special character,capital and small letters</ul>
+                    <ul>username must not be in password</ul> -->
+                    {% endfor %}
+    
+                    <a href="{% url 'home' %}">
+                        <button class="button" type="submit">
+                            Sign Up
+                        </button>
+                    </a>
+    
+                    <strong style="color: white;">or</strong>
+    
+                    <a href="{% url 'login' %}" class="signup">Sign In</a>
+    
+                </div>
+                
+            </div>
+            {% else %}
+    
+            <div class="enclosure">
+                <div class="box">
+                    <div>
+                        <p class="text">LOGIN</p> 
+                        <div>
+                            {% for message in messages  %}
+                                <p style="color: rgb(236, 80, 80);">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <!-- <p style="color: white;">Username:</p>
+                        {{form.username}}
+                        <p style="color: white;">Password:</p>
+                        {{form.password2}}  -->
+                    
+                    </div>
+                    <div>
+                        <p class="text">Name</p>
+                        <input class="input" type="text" placeholder="type username" name="username">
+                    </div>
+                    <div>
+                        <p class="text">Password</p>
+                        <input class="input" type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+                    </div> 
+    
+                    <div class="buttons">
+    
+                        <a href="{% url 'home' %}">
+                            <button class="button" type="submit">
+                                Sign In
+                            </button>
+                        </a>
+    
+                        <strong style="color: white;">or</strong>
+                       
+                        <a href="{% url 'register' %}" class="signup">Sign Up</a>
+    
                     </div>
                     
                 </div>
-                <div>
-                    <!-- <p style="color: white;">Username:</p>
-                    {{form.username}}
-                    <p style="color: white;">Password:</p>
-                    {{form.password2}}  -->
-                
-                </div>
-                <div>
-                    <p class="text">Name</p>
-                    <input class="input" type="text" placeholder="type username" name="username">
-                </div>
-                <div>
-                    <p class="text">Password</p>
-                    <input class="input" type="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
-                </div> 
-  
-                <a href="{% url 'home' %}">
-                    <button class="button" type="submit">
-                        Sign In
-                    </button>
-                </a>
+                {% endif %}
+        </form>
+    </div>
 
-                <p> 
-                    <a href="{% url 'register' %}" class="signup">Sign Up</a>
-                </p>
+    <div class="layer3">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--Stylesheets-->
+    <style media="screen">
+    	
+
+        </style>
+
+        </head>
+        <body>
+            <div class="popup">
+                <button id="close">&times;</button>
+                <h2>
+                    Demo Account
+                </h2>
+                <div >
+                    <p>Username : hu </p>
+                    <p>Password : 12345678eight  </p>
+                </div>
+            
             </div>
-            {% endif %}
-    </form>
+            <!--Script-->
+            <script type="text/javascript">
+        window.addEventListener("load", function(){
+            setTimeout(
+                function open(event){
+                    document.querySelector(".popup").style.display = "block";
+                },
+                2000 
+            )
+        });
 
-</body>
+
+        document.querySelector("#close").addEventListener("click", function(){
+            document.querySelector(".popup").style.display = "none";
+        });
+            </script>
+
+        </body>
+    </div>
+
+    
+
 </html>

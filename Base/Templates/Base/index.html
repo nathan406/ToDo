@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/css/index.css' %}">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <div class="wrap">
@@ -18,8 +18,8 @@
     <div class="layer2">
         <div class="text">
            <p>
-            Simple Note is a simple software developed by Web Developer 
-            Mr Nathan Muyoba
+            Simple Note is a simple software developed by 
+            Nathan Muyoba
            </p> 
             <p>
                 Its designed to help you store any thing in form of text which
@@ -30,9 +30,23 @@
                 
             </p>
             <p>
-                <a href="{% url 'login' %}">sign in</a> or <a href="{% url 'register' %}">sign up</a>
+                <a href="{% url 'login' %}" >
+                    <button class="signin" id="show">
+                        sign in
+                    </button>
+                   
+                </a> 
+                or 
+                <a href="{% url 'register' %}">
+                    <button class="signup">
+                        sign up
+                    </button>
+                    
+                </a>
             </p>
         </div>
     </div>
+
+ 
 </body>
 </html>

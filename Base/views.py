@@ -20,9 +20,9 @@ def home(request):
     
     if  request.method == 'GET':
         submit = True
-    else :
+    else:
         submit = False
-
+        
     context = {
         'topics':host,
         'topic':topics,
@@ -124,6 +124,13 @@ def register(request):
             login(request,User)
             
             return redirect('home')
+        
+        else:
+             messages.error(request,"passwords must match")
+             messages.error(request,"password must contain small and capital letter special character and digit/s")
+             messages.error(request,"username must not be in password ")
+             messages.error(request,"try another username and/or password")
+             
     
     return render(request,'Base/login_register.html',context)
 
@@ -148,7 +155,6 @@ def loginUser(request):
             login(request,user)
             return redirect('home')
   
-
     context ={
         'form':form,
         # 'messages':messages

@@ -5,59 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/css/no-results.css' %}">
     <link rel="stylesheet" href="{% static 'styles/css/home.css' %}">
     <link rel="stylesheet" href="{% static 'styles/css/view.css' %}">
     <link rel="stylesheet" href="{% static 'styles/css/menu.css ' %}">
-    <link rel="stylesheet" href="{% static 'styles/css/no-results.css' %}">
     <link rel="stylesheet" href="{% static 'styles/css/dropdown.css' %}">
-    <script src="style/script.js"></script>
+    <link rel="stylesheet" href="{% static 'styles/css/script.js ' %}">
+    <script src="{% static 'styles/css/script.js ' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <title>Document</title>
+    <title>Home </title>
 </head>  
 <nav >
-    <div class="mobile-navigation">
-        <!-- <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-            <div id="myDropdown" class="dropdown-content">
-              
-              <a href="#about">
-                <img class="home-icon-mobile" src="{% static 'styles/icons/home.svg' %}" alt="">
-              </a>
-              <a href="#base">
-                <img class="edit-delete-mobile" src="{% static 'styles/icons/edit.png' %}" alt="">
-              </a>
-              <a href="#blog">
-                <img class="edit-delete-mobile" src="{% static 'styles/icons/grey-trash-can.png' %}" alt="">
-              </a>
-            </div>
-        </div> -->
-        <button class="menu-button" onclick="myFunction()">
-            <div class="container">
-                <div class="stick stick-1"></div>
-                <div class="stick stick-2"></div>
-                <div class="stick stick-3"></div>
-            </div>
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
 
-            </script><script src="./script.js">
-            </script>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="">
-                    <img class="home-icon-mobile" src="{% static 'icons/home.svg' %}" alt="">
-                </a>
-
-                <a href="">
-                    <img class="edit-delete-mobile" src="{% static 'icons/edit.png' %}" alt="">
-                </a>
-
-                <a id="" >
-                    <!-- <button id="show">
-                    </button> -->
-                    <img class="edit-delete-mobile" src="{% static 'icons/grey-trash-can.png' %}" alt="">
-                </a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HM3</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+            <div  >
+                <ul class="menu-items">
+                    <a href="{% url 'addActivity' %}">
+                        <img class="add-icon-mobile" src="{% static 'icons/add.png' %}" alt="">
+                    </a>
+    
+                    <a id="show" >
+                       
+                        <img class="logout-icon-mobile" src="{% static 'icons/logout.png' %}" alt="">
+                    </a>
+                </ul>
             </div>
-        </button>
-    </div>
+        </div>
+    </body>
 
     <div>
         <form action="" method="get">
@@ -73,11 +56,11 @@
                             </button>
                            
                         </p>
-                          <!-- <div class="footer">
-        <a href="{% url 'addActivity' %}">
-            <button class="add-button">+</button>
-        </a>
-    </div> -->
+                                            <!-- <div class="footer">
+                            <a href="{% url 'addActivity' %}">
+                                <button class="add-button">+</button>
+                            </a>
+                        </div> -->
                     </div>
                     <div>
                         <input id="form" name="q" class="search-bar" type="text" placeholder="Search notes" >
@@ -86,17 +69,21 @@
                         </button> -->
                     </div>
                     <div>
-                        <a href="{% url 'logout' %}">
-                            <button class="logout-button">
+                        <button class="logout-button">
+                            <a href="{% url 'logout' %}">
+                            
                                 logout
-                            </button>
-                        </a>
+                            
+                            </a>
+                        </button>
+                       
                     </div>
                 </div>
             </div>
         </form>
     </div>
 </nav>
+
 <body>
     <!-- <div style="display: flex;
     justify-content: space-evenly;"> -->
@@ -122,9 +109,12 @@
                     <div></div>
                     <div>
                         <img src="{% static 'icons/search.png' %}" class="image" alt="">
-                        <p> no results found <strong>
-                            <a href="{% url 'home' %}">go back</a>
-                        </strong> </p> 
+                        <p> its empty 
+                            <strong>
+                            <a href="{% url 'home' %}">go to home</a> or
+                             <a href="{% url 'addActivity' %}">Add note</a>
+                            </strong> 
+                        </p> 
                     </div>
                     <div></div>
                 </div>
